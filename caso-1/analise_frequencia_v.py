@@ -61,7 +61,7 @@ for j in range(len(nomesNos)):
         dss.monitors.reset_all()
         print("Nó " + node + " Frequência " + frequencia)
 
-    matrixV.to_csv("./v_node_{}.csv".format(node))
+    matrixV.to_csv("./v_caso1_node_{}.csv".format(node))
     print("Matriz V do nó {} exportada".format(node))
 
     # Desabilita a fonte de corrente atual

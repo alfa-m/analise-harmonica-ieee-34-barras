@@ -58,6 +58,6 @@ for h in range(len(harmonicos)):
 
     print("Frequência " + frequencia)
     matrixY = pd.DataFrame(dss.circuit.system_y)
-    matrixY.to_csv("./y_frequencia_{}.csv".format(frequencia))
+    matrixY.to_csv("./y_caso1_frequencia_{}.csv".format(frequencia))
 
 print("Análise harmônica finalizada. Matrizes Y complexas salvas")
