@@ -60,6 +60,7 @@ New Line.L32    Phases=3 Bus1=888.1.2.3  Bus2=890.1.2.3  LineCode=300  Length=10
 ! Capacitors
 New Capacitor.C844      Bus1=844        Phases=3        kVAR=300        kV=24.9
 New Capacitor.C848      Bus1=848        Phases=3        kVAR=450        kV=24.9
+New Capacitor.C832      Bus1=832        Phases=3        kVAR=283        kV=24.9
 
 ! Regulators - three independent phases
 ! Regulator 1
