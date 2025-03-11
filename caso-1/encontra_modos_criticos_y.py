@@ -9,6 +9,7 @@ lista_de_nos_numpy = lista_de_nos.to_numpy()
 modos_criticos = pd.DataFrame(columns=["local","magnitude"])
 
 for matriz in matrizes_diagonais:
+    print("Arquivo atual: {}".format(matriz))
     matriz_diagonal = pd.read_csv("./{}".format(matriz), index_col=0)
     matriz_diagonal_inversa = np.linalg.inv(matriz_diagonal)
     matriz_diagonal_inversa_df = pd.DataFrame(matriz_diagonal_inversa)
@@ -23,5 +24,5 @@ for matriz in matrizes_diagonais:
     indice_modo_critico = valores_maximos_ordenados[valores_maximos_ordenados["autovalores"] == modo_critico].index[0]
     modos_criticos.loc[matriz] = indice_modo_critico, modo_critico
 
-modos_criticos.to_csv('./modos_criticos_y.csv')
+modos_criticos.to_csv('./modos_criticos_y_caso1.csv')
 print("Modos críticos encontrados e salvos no arquivo 'modos_criticos_y.csv'")

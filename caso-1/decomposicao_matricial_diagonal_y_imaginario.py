@@ -5,6 +5,7 @@ from procura_arquivos import procura
 lista_de_matrizes_y = procura("imaginario_y*.csv", './')
 
 for matriz_y in lista_de_matrizes_y:
+    print("Arquivo atual: {}".format(matriz_y))
     caminho = "./{}".format(matriz_y)
     matriz_y_df = pd.read_csv(caminho, index_col=0)
     autovalores_matriz_y, autovetores_matriz_y = np.linalg.eig(matriz_y_df)
