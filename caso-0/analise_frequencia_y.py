@@ -13,6 +13,9 @@ dss_file = pathlib.Path(script_path).joinpath("./ieee34Mod1.dss")
 dss.text("Compile [{}]".format(dss_file))
 dss.dssinterface.allow_forms = 0
 
+# Adiciona dados de coordenadas das barras
+dss.text("Buscoords IEEE34_BusXY.csv")
+
 # Cria variaveis contendo o nome das linhas, barras e nós
 nomesLinhas = dss.lines.names
 nomesBarras = dss.circuit.buses_names

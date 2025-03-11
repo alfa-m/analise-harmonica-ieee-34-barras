@@ -9,6 +9,7 @@ lista_de_nos_numpy = lista_de_nos.to_numpy()
 modos_criticos = pd.DataFrame(columns=["local","magnitude"])
 
 for matriz in matrizes_diagonais:
+    print("Arquivo atual: {}".format(matriz))
     matriz_diagonal = pd.read_csv("./{}".format(matriz), index_col=0)
     matriz_diagonal_inversa = np.linalg.inv(matriz_diagonal)
     matriz_diagonal_inversa_df = pd.DataFrame(matriz_diagonal_inversa)

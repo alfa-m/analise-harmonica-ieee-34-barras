@@ -14,11 +14,11 @@ matrizYimaginario = pd.DataFrame(index=colunas, columns=colunas)
 
 for arquivo in arquivos_y:
     arquivo_df = pd.read_csv("./{}".format(arquivo), index_col=0)
+    print("Arquivo atual: {}".format(arquivo))
 
     k = 0
 
     for i in range(len(lista_de_nos)):
-        print("Nó atual: {}".format(lista_de_nos.iloc[i,0]))
         for j in range((2 * k), (2 * k) + (2 * len(lista_de_nos))):
             if j % 2 == 0:
                 vetorYreal.append(arquivo_df.iloc[j, 0])
