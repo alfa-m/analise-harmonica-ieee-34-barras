@@ -24,5 +24,5 @@ for matriz in matrizes_diagonais:
     indice_modo_critico = valores_maximos_ordenados[valores_maximos_ordenados["autovalores"] == modo_critico].index[0]
     modos_criticos.loc[matriz] = indice_modo_critico, modo_critico
 
-modos_criticos.to_csv('./modos_criticos_y_caso1.csv')
-print("Modos críticos encontrados e salvos no arquivo 'modos_criticos_y.csv'")
+modos_criticos.to_csv('./modos_criticos_y_caso2.csv')
+print("Modos críticos encontrados e salvos no arquivo 'modos_criticos_y_caso2.csv'")
