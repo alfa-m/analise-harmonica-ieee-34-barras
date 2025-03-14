@@ -6,15 +6,15 @@ arquivos_y = procura("y_*.csv", "./")
 lista_de_nos = pd.read_csv("./lista_de_nos.csv", index_col=0)
 colunas = lista_de_nos.values
 
-vetorYreal = []
-vetorYimaginario = []
-
-matrizYreal = pd.DataFrame(index=colunas, columns=colunas)
-matrizYimaginario = pd.DataFrame(index=colunas, columns=colunas)
-
 for arquivo in arquivos_y:
     arquivo_df = pd.read_csv("./{}".format(arquivo), index_col=0)
     print("Arquivo atual: {}".format(arquivo))
+
+    vetorYreal = []
+    vetorYimaginario = []
+
+    matrizYreal = pd.DataFrame(index=colunas, columns=colunas)
+    matrizYimaginario = pd.DataFrame(index=colunas, columns=colunas)
 
     k = 0
 
