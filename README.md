@@ -11,5 +11,5 @@ Análise de frequência removendo as demais fontes harmônicas do sistema IEEE 3
 Análise de frequência mantendo as fontes harmônicas já presentes no sistema IEEE 34 barras.
 No caso, as fontes são os bancos de capacitores conectados nas barras 844 e 848.
 
-### Caso 1
+### Caso 2
 Análise de frequência do sistema IEEE 34 barras com a inserção de um banco de capacitores na barra 832.
