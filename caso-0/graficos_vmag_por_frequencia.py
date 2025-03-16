@@ -1,16 +1,12 @@
-import numpy as np
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 
-vmag_df = pd.read_csv("./vmag_node_832.1.csv", index_col=0)
-tensao_1 = vmag_df.iloc[47,:]
-tensao_2 = vmag_df.iloc[48,:]
-tensao_3 = vmag_df.iloc[49,:]
-harmonico = np.arange(1,50.001,(0.5/60)).tolist()
-fig, ax = plt.subplots()
-ax.plot(harmonico, tensao_1, label='V1')
-ax.plot(harmonico, tensao_2, label='V2')
-ax.plot(harmonico, tensao_3, label='V3')
-ax.legend()
-ax.grid()
+dados = pd.read_csv('./vmag_node_832.1.csv', index_col = 0)
+dados_sem_harmonico_1 = dados.iloc[:,2:]
+dados_transpostos = dados_sem_harmonico_1.T
+dados_transpostos.plot()
+plt.xlabel("Frequência (Hz)")
+plt.ylabel("Impedância (V)")
+plt.title("Fonte harmônica no nó 832.1")
 plt.show()
