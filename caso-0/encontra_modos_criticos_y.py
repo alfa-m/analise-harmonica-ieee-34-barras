@@ -17,7 +17,7 @@ for matriz in matrizes_diagonais:
     matriz_diagonal_inversa_df.to_csv("./inversa_{}".format(matriz))
     valores_diagonais = np.linalg.diagonal(matriz_diagonal_inversa)
     valores_maximos = pd.DataFrame(valores_diagonais, index=lista_de_nos.values, columns=["autovalores"])
-    valores_maximos.to_csv("./valores_maximos_{}".format(matriz))
+    valores_maximos.to_csv("./impedancias_modais_{}".format(matriz))
     valores_maximos_ordenados = valores_maximos.sort_values(by=["autovalores"], ascending=False)
     valores_maximos_ordenados.to_csv("./valores_maximos_ordenados_{}".format(matriz))
     modo_critico = valores_maximos_ordenados.iloc[0,0]
