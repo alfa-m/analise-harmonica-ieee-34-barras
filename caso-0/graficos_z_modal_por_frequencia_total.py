@@ -9,18 +9,16 @@ def plota_vmag(dados_barra, nome_barra):
     plt.ylabel("Impedância")
     plt.title("Medição na barra {} com fonte harmônica no nó 832.1".format(nome_barra))
     plt.grid()
-    #plt.savefig("./figuras/zmodal_barra_{}.png".format(nome_barra))
+    plt.savefig("../figuras/zmodal_barra_{}.png".format(nome_barra))
     plt.show()
     plt.close()
     plt.pause(1)
 
 
-dados = pd.read_csv("./caso-1/impedancias_modais_caso1_total.csv")
+dados = pd.read_csv("impedancias_modais_total.csv")
 dados = dados.rename(columns={'Unnamed: 0': 'Frequência'})
 dados.sort_values(by="Frequência", inplace=True)
 dados = dados.iloc[:, 1:]
-
-plota_vmag(dados, "total")
 
 barra_0 = "sourcebus"
 dados_barra_0 = dados.iloc[:,0:3]
@@ -35,7 +33,6 @@ dados_barra_2 = dados.iloc[:,7:10]
 dados_transpostos_2 = dados_barra_2.T
 plota_vmag(dados_transpostos_2, barra_2)
 
-"""
 barra_3 = "806"
 dados_barra_3 = dados.iloc[9:12,2:]
 dados_transpostos_3 = dados_barra_3.T
@@ -205,4 +202,3 @@ barra_34 = "890"
 dados_barra_34 = dados.iloc[92:,2:]
 dados_transpostos_34 = dados_barra_34.T
 plota_vmag(dados_transpostos_34, barra_34)
-"""
