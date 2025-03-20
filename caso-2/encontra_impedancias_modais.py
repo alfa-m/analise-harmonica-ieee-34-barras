@@ -15,5 +15,6 @@ impedancias_modais_df = impedancias_modais.T
 impedancias_modais_df.reset_index(inplace=True)
 impedancias_modais_df = impedancias_modais_df.rename(columns={'index': 'Frequencia'})
 impedancias_modais_df["Frequencia"] = impedancias_modais_df["Frequencia"].apply(lambda x: float(x))
-impedancias_modais_df.sort_values(by="Frequencia", inplace=True)
-impedancias_modais_df.to_csv("impedancias_modais_caso2_total.csv")
+impedancias_modais_df = impedancias_modais_df.sort_values(by="Frequencia")
+impedancias_modais_df.reset_index(inplace=True, drop=True)
+impedancias_modais_df.to_csv("impedancia_modal_caso2_total.csv")
