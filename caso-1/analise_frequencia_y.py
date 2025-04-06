@@ -57,6 +57,19 @@ for h in range(len(harmonicos)):
     dss.monitors.reset_all()
 
     print("Frequência " + frequencia)
+    matrixY = pd.Series(dss.circuit.system_y)
+    matrixYcomplexa = []
+    index = 0
+
+    for a in range(len(nomesNos)):
+        linhaY = []
+        for b in range(len(nomesNos)):
+            linhaY.append(complex(matrixY[index], matrixY[index+1]))
+            index += 2
+        
+        matrixYcomplexa.append(linhaY)
+    matrixYcomplexa_df = pd.DataFrame(matrixYcomplexa)
+    matrixYcomplexa_df.to_csv("./complexa_y_caso1_frequencia_{}.csv".format(frequencia))
     matrixY = pd.DataFrame(dss.circuit.system_y)
     matrixY.to_csv("./y_caso1_frequencia_{}.csv".format(frequencia))
 
